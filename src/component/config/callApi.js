@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 // declare api
-const API = 'https://citytour.icodexa.com';  //'https://kissaapp.icodexa.com';
+const API = 'https://api.livedekho.tv';  //'https://kissaapp.icodexa.com';
 
 export const CallApi = async (method, apiPath, params) => {
   let token = await AsyncStorage.getItem('token');

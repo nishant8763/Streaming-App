@@ -1,6 +1,6 @@
 export default {
-    primary: '#643eef',
-    text_color: '#858585',
+    primary: '#080611',
+    text_color: '#fff',
     white: '#FFF',
     lighter: '#F3F3F3',
     light: '#d6d2d2',

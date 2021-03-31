@@ -64,7 +64,7 @@ class DrawerContent extends React.Component {
             <SafeAreaView style={{ flex: 1, backgroundColor: Colors.primary, opacity: 0.8 }} forceInset={{ top: 'always' }}>
                 <View style={{ flex: 1, marginTop: 10 }}>
                     <DrawerContentScrollView {...this.props} showsVerticalScrollIndicator={false}>
-                        <View style={{ width: '85%', marginTop: 5, marginBottom: 5, alignSelf: 'center' }} >
+                        {/* <View style={{ width: '85%', marginTop: 5, marginBottom: 5, alignSelf: 'center' }} >
                             <Image source={{ uri: "https://i.pinimg.com/originals/af/09/41/af0941ba06185e9846af909ba9350baf.png" }}
                                 style={{
                                     width: 70,
@@ -72,62 +72,18 @@ class DrawerContent extends React.Component {
                                     marginTop: 10,
                                     borderRadius: 100,
                                 }} />
-                        </View>
-                        <DrawerItem
+                        </View> */}
+                        {/* <DrawerItem
 
                             label={() => <Text style={styles.title} >Restaurant</Text>}
                             onPress={() => this.props.navigation.navigate('Tab')}
-                        />
+                        /> */}
                         <View style={styles.line} />
                         <DrawerItem
-
-                            label={() => <Text style={styles.title}>Fitness</Text>}
+                            label={() => <Text style={styles.title}>All Channels</Text>}
                             onPress={() => this.props.navigation.navigate('E_magazine')}
                         />
                         <View style={styles.line} />
-                        <DrawerItem
-
-                            label={() => <Text style={styles.title}>Events</Text>}
-                            onPress={() => this.props.navigation.navigate('Tab')}
-                        />
-                        <View style={styles.line} />
-                        <DrawerItem
-
-                            label={() => <Text style={styles.title}>Hotels</Text>}
-                            onPress={() => this.props.navigation.navigate('Tab')}
-                        />
-                        <View style={styles.line} />
-                        <DrawerItem
-
-                            label={() => <Text style={styles.title}>Real Estate</Text>}
-                            onPress={() => this.props.navigation.navigate('Tab')}
-                        />
-                        <View style={styles.line} />
-                        <DrawerItem
-                            label={() => <Text style={styles.title}>Business</Text>}
-                            onPress={() => this.props.navigation.navigate('Tab')}
-                        />
-                        <View style={styles.line} />
-                        <DrawerItem
-
-                            label={() => <Text style={styles.title}>About</Text>}
-                            onPress={() => this.props.navigation.navigate('Tab')}
-                        />
-                        <View style={styles.line} />
-                        <DrawerItem
-
-                            label={() => <Text style={styles.title}>Privacy Policy</Text>}
-                            onPress={() => this.props.navigation.navigate('Tab')}
-                        />
-                        <View style={styles.line} />
-
-                        <DrawerItem
-
-                            label={() => <Text style={{ ...styles.title, color: '#f00' }}>Logout</Text>}
-                            onPress={this.onLogooutCall}
-                        />
-                        <View style={styles.line} />
-
                     </DrawerContentScrollView>
                 </View>
             </SafeAreaView>

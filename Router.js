@@ -14,7 +14,7 @@ import { StatusBar } from 'react-native';
 
 
 import Splash from './src/Screens/Splash'
-import DrawerMenu from './src/Screens/Drawer/DrawerMenu'
+import DrawerMenu from './src/Navigation/Drawer/DrawerMenu'
 
 // const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();

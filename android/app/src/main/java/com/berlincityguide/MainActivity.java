@@ -1,4 +1,4 @@
-package com.berlincityguide;
+package com.streaming_app;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "BerlinCityGuide";
+    return "StreamingApp";
   }
 }

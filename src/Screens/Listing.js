@@ -12,24 +12,25 @@ import {
     TextInput, Dimensions, ScrollView
 } from "react-native"
 
-import Colors from "../../component/Style/Colors";
-import { CallApi } from "../../component/config/callApi";
-import ToastMessage from "../../component/toastMessage/ToastMessage";
+import Colors from "../component/Style/Colors";
+import { CallApi } from "../component/config/callApi";
+import ToastMessage from "../component/toastMessage/ToastMessage";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import Styles from "../../component/Style/Style";
+import Styles from "../component/Style/Style";
 const { height, width } = Dimensions.get('window')
-class Home extends React.Component {
+class Listing extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            Channels: [],
-            loader: true
+            Channels: this.props.route.params.item.events,
+            loader: false
         };
     }
     componentDidMount() {
-        this.ChannelData()
+        console.log('props ', this.props.route.params.item.events)
+        // this.ChannelData()
     }
     ChannelData = async (x) => {
         this.setState({ loader: true })
@@ -81,45 +82,6 @@ class Home extends React.Component {
                         </View>
 
                     ) : (<View>
-                        {/* Header Part   */}
-                        <View style={{ marginTop: 15 }} >
-                            <Text style={styles.header_text}>All Channels</Text>
-                            <FlatList
-                                style={{ alignSelf: 'center' }}
-                                data={Channels}
-                                keyExtractor={(item, index) => `${index}K`}
-                                // numColumns={2}
-                                horizontal
-                                showsVerticalScrollIndicator={false}
-                                renderItem={({ item, index }) => {
-                                    return (
-                                        <TouchableOpacity
-                                            onPress={() => this.props.navigation.navigate('Listing', { item: item })}
-                                            style={styles.fl_view} >
-                                            <Image
-
-                                                style={{
-                                                    height: 250, width: width * .46,
-                                                    borderRadius: 8
-                                                }}
-                                                source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYEaxBegu8j6QiowcM2DUEX5oG26LCThWEEA&usqp=CAU' }}
-                                            />
-                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 5, paddingStart: 5 }} >
-                                                <Text style={{ ...styles.header_text, }} >{item.id}</Text>
-                                                <View style={{ flexDirection: 'row', }} >
-                                                    <Text style={{ color: Colors.white, fontSize: 15, marginEnd: 5, alignSelf: 'center' }} >8</Text>
-                                                    <FontAwesome name={'star'} size={20} color={'#FFF600'} style={{ alignSelf: 'center' }} />
-                                                </View>
-                                            </View>
-                                            <Text style={{ width: width * .46, color: Colors.white, fontWeight: 'bold', paddingStart: 5 }}>
-                                                Lorem ipsum dolor amet ndblorem ipsum dolor amet
-                                    </Text>
-                                        </TouchableOpacity>
-                                    )
-
-                                }}
-                            />
-                        </View>
                         {/* All channels with description  */}
                         <View style={{ marginTop: 15, marginBottom: 15 }} >
                             <FlatList
@@ -130,11 +92,10 @@ class Home extends React.Component {
                                 // horizontal
                                 showsVerticalScrollIndicator={false}
                                 renderItem={({ item, index }) => {
+                                    // console.log(item)
                                     return (
-                                        <TouchableOpacity
-                                            style={styles.fl_view}
-                                            onPress={() => this.props.navigation.navigate('Listing', { item: item, })} >
-                                            <Text style={styles.header_text}>{item.id}</Text>
+                                        <View style={styles.fl_view} >
+                                            <Text style={styles.header_text}>{item.name}</Text>
                                             <Image
                                                 style={{
                                                     height: 250, width: '100%',
@@ -142,7 +103,7 @@ class Home extends React.Component {
                                                 }}
                                                 source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYEaxBegu8j6QiowcM2DUEX5oG26LCThWEEA&usqp=CAU' }}
                                             />
-                                        </TouchableOpacity>
+                                        </View>
                                     )
 
                                 }}
@@ -155,7 +116,7 @@ class Home extends React.Component {
     };
 }
 
-export default Home;
+export default Listing;
 
 const styles = StyleSheet.create({
     header_text: {

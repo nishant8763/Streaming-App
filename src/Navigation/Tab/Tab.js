@@ -12,13 +12,14 @@ import {
 import { connect } from 'react-redux';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import Entypo from 'react-native-vector-icons/Entypo';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import Colors from '../../component/Style/Colors';
 import Home from '../../Screens/TabScreens/Home';
+import Listing from '../../Screens/Listing';
 import Likes from '../../Screens/TabScreens/Likes';
 import Profile from '../../Screens/TabScreens/Profile';
 import Streaming from '../../Screens/TabScreens/Streaming';
@@ -32,7 +33,7 @@ const Dashboardstack = createStackNavigator();
 const DashboardStackScreen = () => (
     <Dashboardstack.Navigator headerMode={false}>
         <Dashboardstack.Screen name="Home" component={Home} />
-        {/* <Dashboardstack.Screen name="Listing" component={Listing} /> */}
+        <Dashboardstack.Screen name="Listing" component={Listing} />
     </Dashboardstack.Navigator>
 );
 
@@ -57,20 +58,21 @@ function tab(props) {
         <Tabnav.Navigator
             initialRouteName={'Home'}
             tabBarOptions={{
-                activeTintColor: Colors.primary,
-                inactiveTintColor: '#9c9687',
+
+                activeTintColor: Colors.white,
+                inactiveTintColor: '#f2f2f2',
                 labelPosition: 'below-icon',
                 pressColor: 'blue',
                 showLabel: false,
                 style: {
                     height: 50,
-                    backgroundColor: Colors.white
+                    backgroundColor: Colors.primary,
                 },
                 labelStyle: {
                     textAlign: 'center',
                     fontSize: 14,
                     paddingBottom: 5,
-                    fontFamily: 'Roboto-Regular'
+                    fontFamily: 'Roboto-Regular',
                 },
             }}>
             <Tabnav.Screen
@@ -79,7 +81,7 @@ function tab(props) {
                 options={{
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={33} />
+                        <FontAwesome5 name="home" color={color} size={28} />
                     ),
                 }} />
             <Tabnav.Screen
@@ -88,7 +90,7 @@ function tab(props) {
                 options={{
                     tabBarLabel: 'Likes',
                     tabBarIcon: ({ color }) => (
-                        <Ionicons name="md-search-outline" color={color} size={33} />
+                        <MaterialCommunityIcons name="heart" color={color} size={33} />
                     ),
                 }}
             />

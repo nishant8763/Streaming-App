@@ -33,7 +33,7 @@ class Profile extends React.Component {
     render() {
         const { Name, Email, Phone, Address, image } = this.state
         return (
-            <SafeAreaView style={{ paddingStart: 10, flex: 1, paddingTop: 10, backgroundColor: '#f2f2f2', }} >
+            <SafeAreaView style={{ paddingStart: 10, flex: 1, paddingTop: 10, backgroundColor: Colors.primary, }} >
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View>
                         <Text style={styles.title} >Profile</Text>
